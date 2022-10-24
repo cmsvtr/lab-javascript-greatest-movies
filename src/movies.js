@@ -58,10 +58,8 @@ function dramaMoviesScore(moviesArray) {
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 function orderByYear(moviesArray) {
     const clonemA = [...moviesArray];
-    const moviesSortedYear = clonemA.sort((a, b) => a.year - b.year);
-    const moviesSortedYearTitle = moviesSortedYear.sort((a, b) => {
-        return a.year === b.year ? a.title.localeCompare(b.title) : false});
-    return moviesSortedYearTitle
+    clonemA.sort((a, b) => a.year === b.year ? a.title.localeCompare(b.title) : a.year - b.year);
+    return clonemA;
 
 }
 
